@@ -1,37 +1,17 @@
 {
    "manifest_version": 2,
    "name": "Joshydora",
-   "description": "Tabs? Where we're listening, we don't need tabs.",
+   "description": "React flux who needs ads",
    "background": {
       "page": "public/background.html"
    },
    "browser_action": {
-      // "default_icon": "public/images/anesidora-19.png",
       "default_popup": "public/popup.html"
    },
-   // "content_scripts": [ {
-   //    "all_frames": true,
-   //    "js": [ "js/activehotkeys.js" ],
-   //    "matches": [ "http://*/*", "https://*/*", "ftp://*/*" ],
-   //    "run_at": "document_start"
-   // } ],
-   // "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
-   // "icons": {
-   //    "128": "images/anesidora-128.png",
-   //    "16": "images/anesidora-16.png",
-   //    "48": "images/anesidora-48.png"
-   // },
-   // "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDavpBKfm4NFF8RI5r36vD/pYJc93lBGslV+98SOy/fFKSXAS/ALoKM87phzGd6aYf0pWG+g0eZnFd7kl0OuHp3+3nDxFiGA+dTy/j18ugIFGEhH/LwrIrTsPz4N4IeqTi0PHbPKukL6ZiVGeD5JBxJ/vHB1prgCynMe5dTsH1eZwIDAQAB",
-   // "omnibox": {
-   //    "keyword": "radio"
-   // },
    "options_page": "public/options.html",
    "permissions": [
       "http://*.pandora.com/*",
       "https://*.pandora.com/*",
-      // "https://tuner.pandora.com/*",
-      // "http://www.pandora.com/*",
-      // "https://www.pandora.com/*",
       "notifications",
       "tabs"
    ],

@@ -7,9 +7,12 @@ import SongStore from './song-store';
 let _id = null;
 
 class CurrentSongStore extends FluxStore {
+	/* songIdentity of current song */
 	get id () {
 		return _id;
 	}
+
+	/* current song */
 	get song () {
 		return SongStore.get( _id );
 	}

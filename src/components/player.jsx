@@ -38,5 +38,5 @@ export default class Player extends React.Component {
 }
 
 Player.propTypes = {
-	song: SongPropType.isRequired,
+	song: SongPropType,
 };
