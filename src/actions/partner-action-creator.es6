@@ -10,7 +10,9 @@ export function use ( partner ) {
 	} );
 }
 
-export function login () {
+export function login ( partner ) {
+	use( partner );
+
 	const requestTime = +new Date();
 	const rqst = {
 		data: PartnerStore.partner,

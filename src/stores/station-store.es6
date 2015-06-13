@@ -12,10 +12,12 @@ class StationStore extends FluxStore {
 		}
 		return null;
 	}
+
 	get stations () {
 		return [ ..._stations ];
 	}
 }
+
 const store = new StationStore();
 export default store;
 
@@ -27,6 +29,7 @@ dispatcher.register( ( { type, data } ) => {
 		break;
 	}
 } );
+
 function setStations ( stations ) {
 	_stations = stations;
 	store.emit();

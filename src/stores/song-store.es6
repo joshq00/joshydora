@@ -3,20 +3,23 @@ import dispatcher from '../dispatcher';
 import { GET_PLAYLIST } from '../constants/station-constants';
 
 let _songs = [];
-let _nextIndx = 0;
 
 class SongStore extends FluxStore {
-	get all () {
-		return [ ..._songs ];
+	get ( songIdentity ) {
+		const matches = _songs.filter( song =>
+			song.songIdentity === songIdentity
+		);
+		return matches[ 0 ];
 	}
-	get next () {
-		return _songs[ _nextIndx++ ];
+
+	get songs () {
+		return [ ..._songs ];
 	}
 }
 const store = new SongStore();
 export default store;
 
-dispatcher.register( ( { type, data } ) => {
+store.dispatchToken = dispatcher.register( ( { type, data } ) => {
 	switch ( type ) {
 	// playlist received
 	case GET_PLAYLIST:
@@ -26,7 +29,6 @@ dispatcher.register( ( { type, data } ) => {
 } );
 
 function handlePlaylist ( response ) {
-	_nextIndx = 0;
 	_songs = response.items.filter(
 		song => ( song.songIdentity != null )
 	);
